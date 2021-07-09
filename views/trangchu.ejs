@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+        <script>
+            $(document).ready(function() {
+                var data = <%-data %>;
+                // var document = data.forEach((element) => {
+                //     element.map((ele) => (
+                //         <tr>
+                //             <td>{ele.diem}</td>
+                //         </tr>
+                //     ))
+                // })
+                $.each(data, function(index, value) {
+                    $("table").append(`<tr>
+                    <td>${value[0].sbd}</td>
+                    <td>${value[0].diem}</td>
+                    <td>${value[1].diem}</td>
+                    <td>${value[2].diem}</td>
+                    <td>${value[3].diem}</td>
+                    <td>${value[4].diem}</td>
+                    <td>${value[5].diem}</td>
+                    <td>${value[6].diem}</td>
+                    <td>${value[7].diem}</td>
+                    <td>${value[8].diem}</td>
+                </tr>`);
+                })
+                console.log(document);
+            })
+        </script>
+        <style>
+            #show {
+                font-family: Arial, Helvetica, sans-serif;
+                border-collapse: collapse;
+                width: 100%;
+            }
+            #show td,
+            #show th {
+                border: 1px solid #ddd;
+                padding: 8px;
+            }
+            #customers tr:nth-child(even) {
+                background-color: #f2f2f2;
+            }
+
+            #show tr:hover {
+                background-color: #ddd;
+            }
+
+            #show th {
+                padding-top: 12px;
+                padding-bottom: 12px;
+                text-align: left;
+                background-color: #04aa6d;
+                color: white;
+            }
+        </style>
+    </head>
+    <body>
+        <table id="show">
+            <tr>
+                <th>SBD</th>
+
+                <th>Toán</th>
+                <th>Văn</th>
+                <th>Ngoại ngữ</th>
+                <th>Vật lý</th>
+                <th>Hóa học</th>
+                <th>Sinh học</th>
+                <th>Lịch sử</th>
+                <th>Địa lý</th>
+                <th>GDCD</th>
+            </tr>
+        </table>
+        <div class="test"></div>
+    </body>
+</html>
